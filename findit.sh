@@ -12,3 +12,8 @@
 
 dir=$1
 
+if [ ! -d "$dir" ]; then
+	echo "directory $dir not found"
+ else 
+    ls $dir | sed 's/\(.*\)\..*/\1/' | sort | uniq -u
+fi
